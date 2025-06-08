@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiply & Divide</title>
+  <script>
+    function calculate(operation) {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var result;
+
+      if (operation === "multiply") {
+        result = num1 * num2;
+      } else if (operation === "divide") {
+        if (num2 === 0) {
+          alert("Cannot divide by zero");
+          return;
+        }
+        result = num1 / num2;
+      }
+
+      document.getElementById("result").innerText = "The Result Is: " + result;
+    }
+  </script>
+</head>
+<body>
+  <h2>Multiplication and Division of Two Numbers</h2>
+
+  <table>
+    <tr>
+      <td>1st Number:</td>
+      <td><input type="text" id="num1" /></td>
+    </tr>
+    <tr>
+      <td>2nd Number:</td>
+      <td><input type="text" id="num2" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button onclick="calculate('multiply')">Multiply</button>
+        <button onclick="calculate('divide')">Divide</button>
+      </td>
+    </tr>
+  </table>
+
+  <p id="result">The Result Is:</p>
+</body>
+</html>
